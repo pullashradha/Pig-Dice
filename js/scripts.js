@@ -23,7 +23,11 @@ Player.prototype.hold = function () {
 }
 
 // Player.prototype.resetButton = function () {
-//   if ()
+//   if (.click === true) {
+//     alert("Are you sure you want to RESET the game?");
+//   } else {
+//     $("index.html").show();
+//   }
 // }
 
 
@@ -58,7 +62,10 @@ $(document).ready(function() {
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
   });
-  // $("#reset-btn").click(function(event) {
-  //   alert("Are you sure you want to RESET the game?");
-  // });
+  $("#reset-btn").click(function(event) {
+    var resetQuestion = confirm("Are you sure you want to RESET the game?")
+    if (resetQuestion === true) {
+      location.reload();  //location refers to current page
+    }
+  });
 });
