@@ -25,28 +25,28 @@
     </div>
 <!-- Navbar End -->
 <!-- Intro Popup Start -->
-    <div class="jumbotron" id="intro-content">
+    <!-- <div class="jumbotron" id="intro-content">
       <h1 class="page-header">Welcome to the Pig Dice web game!</h1>
       <p>
-        Description of rules
+        Description of the game rules...
       </p>
       <div class="row container">
         <div class="col-xs-6">
-          <h3><strong>Player 1's Name:</strong></h3><input required class="form-control input-lg" type="text" name="name" id="p1-name">
+          <h3><strong>Player 1's Name:</strong></h3><input required class="form-control input-lg" type="text" name="name" id="p1input-name">
         </div>
         <div class="col-xs-6">
-          <h3><strong>Player 2's Name:</strong></h3><input required class="form-control input-lg" type="text" name="name" id="p2-name">
+          <h3><strong>Player 2's Name:</strong></h3><input required class="form-control input-lg" type="text" name="name" id="p2input-name">
         </div>
-        <button type="btn" class="btn btn-primary">Start Game!</button>
+        <button type="submit" class="btn btn-primary" id="startgame-btn">Start Game!</button>
       </div>
-    </div>
+    </div> -->
 <!-- Intro Popup End -->
     <div id="content">
       <h1 class="page-header">Pig Dice!</h1>
       <div class="row container">
 <!-- Player 1 Start -->
         <div class="col-xs-4" id="player1">
-          <h1><strong>Player 1</strong></h1>
+          <h1><strong><span id="p1-name"></span></strong></h1>
           <h3>Total Score: <span id="p1-score"></span></h3>
           <h3>Turn Score: <span id="p1-turnscore"></span></h3>
           <button type="button" class="btn btn-success" id="p1-roll">Roll Dice</button>
@@ -58,7 +58,7 @@
         </div>
 <!-- Player 2 Start -->
         <div class="col-xs-4"id="player2">
-          <h1><strong>Player 2</strong></h1>
+          <h1><strong><span id="p2-name"></span></strong></h1>
           <h3>Total Score: <span id="p2-score"></span></h3>
           <h3>Turn Score: <span id="p2-turnscore"></span></h3>
           <button type="button" class="btn btn-success" id="p2-roll">Roll Dice</button>
@@ -66,6 +66,7 @@
         </div>
 <!-- Player 2 End -->
       </div>
+      <button type="button" class="btn btn-info" id="restart-btn">Restart</button>
       <button type="button" class="btn btn-primary" id="reset-btn">Reset the Game!</button>
     </div>
 <!-- Footer Start -->

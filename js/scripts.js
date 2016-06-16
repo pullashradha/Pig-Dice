@@ -29,6 +29,15 @@ Player.prototype.hold = function () {
 $(document).ready(function() {
   event.preventDefault();
 
+  $("#startgame-btn").click(function(event) {
+    var playerName1 = $("input#p1input-name").val();
+    var playerName2 = $("input#p2input-name").val();
+    $("#p1-name").text(playerName1);
+    $("#p2-name").text(playerName2);
+    $("#intro-content").hide();
+    $("#content").show();
+  })
+
   var newPlayer1 = new Player ();
   var newPlayer2 = new Player ();
 
@@ -55,7 +64,7 @@ $(document).ready(function() {
   });
 
   $("#reset-btn").click(function(event) {
-    var resetQuestion = confirm("Are you sure you want to RESET the game?")
+    var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
     if (resetQuestion === true) {
       location.reload();  //location refers to current page
     }
