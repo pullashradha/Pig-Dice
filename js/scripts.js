@@ -2,16 +2,16 @@
 function Player () {
   this.totalScore = 0;
   this.turnScore = 0;
+  this.diceBox = document.getElementById("dieBox");
 }
 
 Player.prototype.rollDice = function () {
   var diceOutput = Math.floor(Math.random() * 6) + 1;
-  var diceBox = document.getElementById("dieBox"); //getting the id to write into box
-  diceBox.innerHTML = diceOutput;
+  this.diceBox.innerHTML = diceOutput;
   if (diceOutput === 1) {
     alert("You lost this turn, switch players!");
     this.turnScore = 0;
-    diceBox.innerHTML = 0;
+    this.diceBox.innerHTML = 0;
   } else {
     this.turnScore += diceOutput;
   }
@@ -19,8 +19,12 @@ Player.prototype.rollDice = function () {
 
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
-  // diceBox.innerHTML = 0;
+  this.diceBox.innerHTML = 0;
 }
+
+// Player.prototype.resetButton = function () {
+//   if ()
+// }
 
 
 //User Interface Logic
@@ -43,15 +47,18 @@ $(document).ready(function() {
     $("#p1-turnscore").text(0);
   });
 
-  $("#p2-roll").click(function(event){
+  $("#p2-roll").click(function(event) {
     event.preventDefault();
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
-  $("#p2-hold").click(function(event){
+  $("#p2-hold").click(function(event) {
     event.preventDefault();
     newPlayer2.hold();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
   });
+  // $("#reset-btn").click(function(event) {
+  //   alert("Are you sure you want to RESET the game?");
+  // });
 });
