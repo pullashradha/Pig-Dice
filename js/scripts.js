@@ -20,15 +20,9 @@ Player.prototype.rollDice = function () {
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
   this.diceBox.innerHTML = 0;
+  this.turnScore = 0;
 }
 
-// Player.prototype.resetButton = function () {
-//   if (.click === true) {
-//     alert("Are you sure you want to RESET the game?");
-//   } else {
-//     $("index.html").show();
-//   }
-// }
 
 
 //User Interface Logic
@@ -39,29 +33,27 @@ $(document).ready(function() {
   var newPlayer2 = new Player ();
 
   $("#p1-roll").click(function(event) {
-    event.preventDefault();
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
   });
-
   $("#p1-hold").click(function(event) {
-    event.preventDefault();
     newPlayer1.hold();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
+    alert("Now it's Player 2's turn");
   });
 
   $("#p2-roll").click(function(event) {
-    event.preventDefault();
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
   $("#p2-hold").click(function(event) {
-    event.preventDefault();
     newPlayer2.hold();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
+    alert("Now it's Player 1's turn");
   });
+
   $("#reset-btn").click(function(event) {
     var resetQuestion = confirm("Are you sure you want to RESET the game?")
     if (resetQuestion === true) {
