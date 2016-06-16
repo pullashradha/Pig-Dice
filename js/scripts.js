@@ -20,7 +20,7 @@ Player.prototype.rollDice = function () {
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
   this.diceBox.innerHTML = 0;
-  this.turnScore = 0;
+  this.turnScore = 0; //Fix bug, resets turnScore value at the end of each turn
 }
 
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
     newPlayer1.hold();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
-    alert("Now it's Player 2's turn");
+    alert("It's the next player's turn");
   });
 
   $("#p2-roll").click(function(event) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
     newPlayer2.hold();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
-    alert("Now it's Player 1's turn");
+    alert("It's the next player's turn");
   });
 
   $("#reset-btn").click(function(event) {

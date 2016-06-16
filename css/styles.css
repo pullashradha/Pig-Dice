@@ -4,10 +4,17 @@ body {
 }
 
 #nav {
-  padding-bottom: 30px;
+  margin-top: -35px;
+  padding-bottom: 3px;
+}
+
+#intro-content {
+  text-align: center;
+  margin-top: 250px;
 }
 
 #content {
+  display: none;
   padding-top: 150px;
   text-align: center;
 }
@@ -20,6 +27,11 @@ body {
 
 .row {
   width: 135%;
+}
+
+h1 {
+  font-size: 35pt;
+  padding-bottom: 30px;
 }
 
 #dice {
@@ -42,4 +54,13 @@ body {
 .btn-primary {
   font-size: 25pt;
   margin-top: 150px;
+}
+
+input {
+  margin-bottom: -50px;
+}
+
+p {
+  margin-top: -45px;
+  padding-bottom: 25px;
 }
