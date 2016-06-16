@@ -13,8 +13,8 @@ body {
 }
 
 #intro-content {
-  color: #FFFFFF;
-  background-color: #000000;
+  color: #000000;
+  background-color: #FFFFFF;
   text-align: center;
   margin-top: 250px;
 }
@@ -35,9 +35,23 @@ body {
   width: 135%;
 }
 
+#inner-game {
+  width: 100%;
+  margin: 0px;
+  background-color: #FFFFFF;
+}
+
 h1 {
   font-size: 35pt;
   padding-bottom: 30px;
+}
+
+#p1input-name {
+  margin-left: 25px;
+}
+
+#p2input-name {
+  margin-left: 15px;
 }
 
 #dice {
@@ -63,7 +77,7 @@ h1 {
 }
 
 #startgame-btn {
-  margin-top: 100px;
+  margin-top: 125px;
 }
 
 #reset-btn {
@@ -83,4 +97,10 @@ input {
 p {
   margin-top: -45px;
   padding-bottom: 25px;
+  font-size: 15pt;
+}
+
+#rules {
+  margin-left: 75px;
+  margin-right: 75px;
 }
