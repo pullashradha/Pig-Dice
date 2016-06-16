@@ -63,10 +63,14 @@ $(document).ready(function() {
     alert("It's the next player's turn");
   });
 
+  $("#restart-btn").click(function(event) {
+    
+  });
+
   $("#reset-btn").click(function(event) {
     var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
     if (resetQuestion === true) {
-      location.reload();  //location refers to current page
+      location.reload();  //location refers to current page which is the intro-content
     }
   });
 });

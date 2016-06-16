@@ -3,18 +3,24 @@ body {
   color: #000000;
 }
 
+.navbar-inverse {
+  background-color: #000000;
+}
+
 #nav {
   margin-top: -35px;
   padding-bottom: 3px;
 }
 
 #intro-content {
+  color: #FFFFFF;
+  background-color: #000000;
   text-align: center;
   margin-top: 250px;
 }
 
 #content {
-  /*display: none;*/
+  display: none;
   padding-top: 150px;
   text-align: center;
 }
@@ -54,7 +60,15 @@ h1 {
 .btn-primary {
   font-size: 25pt;
   margin-top: 20px;
+}
+
+#startgame-btn {
+  margin-top: 100px;
+}
+
+#reset-btn {
   width: 100%;
+  margin-left: 0px;
 }
 
 .btn-info {
