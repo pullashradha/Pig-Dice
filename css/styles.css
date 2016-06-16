@@ -3,30 +3,29 @@ body {
   color: #000000;
 }
 
-.container {
-  text-align: center;
-  width: 150%;
-}
-
 #content {
   padding-top: 10%;
+  text-align: center;
 }
 
 .page-header {
-  text-align: center;
   font-size: 65pt;
   margin-bottom: 75px;
+  padding-bottom: 35px;
+}
+
+.row {
+  width: 135%;
 }
 
 #dice {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   background: #000000;
-  border: #000000 1px solid;
+  border: #000000;
   color: #FFFFFF;
-  font-size: 55px;
+  font-size: 100px;
   text-align: center;
-  margin: 5px;
   margin-top: 50px;
 }
 
@@ -34,4 +33,9 @@ body {
   margin-top: 35px;
   margin-left: 20px;
   font-size: 15pt;
+}
+
+.btn-primary {
+  font-size: 25pt;
+  margin-top: 150px;
 }
