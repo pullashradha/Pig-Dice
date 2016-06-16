@@ -12,15 +12,11 @@ body {
   padding-bottom: 3px;
 }
 
-#intro-content {
+#content {
+  /*display: none;*/
+  width: 100%;
   color: #000000;
   background-color: #FFFFFF;
-  text-align: center;
-  margin-top: 250px;
-}
-
-#content {
-  display: none;
   padding-top: 150px;
   text-align: center;
 }
@@ -31,14 +27,8 @@ body {
   padding-bottom: 35px;
 }
 
-.row {
+#names-row {
   width: 135%;
-}
-
-#inner-game {
-  width: 100%;
-  margin: 0px;
-  background-color: #FFFFFF;
 }
 
 h1 {
@@ -65,7 +55,7 @@ h1 {
   margin-top: 50px;
 }
 
-.btn {
+#p1-roll, #p1-hold, #p2-roll, #p2-hold, #restart-btn {
   margin-top: 35px;
   margin-left: 20px;
   font-size: 15pt;
@@ -83,6 +73,7 @@ h1 {
 #reset-btn {
   width: 100%;
   margin-left: 0px;
+  margin-right: 0px;
 }
 
 .btn-info {
@@ -103,4 +94,8 @@ p {
 #rules {
   margin-left: 75px;
   margin-right: 75px;
+}
+
+#footer {
+  margin-top: 100px;
 }
