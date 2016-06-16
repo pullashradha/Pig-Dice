@@ -30,6 +30,10 @@ If the player clicks "Hold" it becomes the next player's turn | ----- | -----
 * jQuery
 * JavaScript
 
+### Links
+
+Git Hub Webpage: http://pullashradha.github.io/pig-dice
+
 ### License
 
 Licensed under the GPL License
