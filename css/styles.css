@@ -8,16 +8,21 @@ body {
 }
 
 #nav {
-  margin-top: -35px;
   padding-bottom: 3px;
 }
 
-#content {
-  /*display: none;*/
-  width: 100%;
+#intro-content {
   color: #000000;
   background-color: #FFFFFF;
-  padding-top: 150px;
+  margin-top: 200px;
+  text-align: center;
+}
+
+#content {
+  display: none;
+  color: #000000;
+  background-color: #FFFFFF;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -72,8 +77,6 @@ h1 {
 
 #reset-btn {
   width: 100%;
-  margin-left: 0px;
-  margin-right: 0px;
 }
 
 .btn-info {
