@@ -3,8 +3,12 @@ body {
   color: #000000;
 }
 
+#nav {
+  padding-bottom: 30px;
+}
+
 #content {
-  padding-top: 10%;
+  padding-top: 150px;
   text-align: center;
 }
 
