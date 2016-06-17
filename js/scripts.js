@@ -19,14 +19,15 @@ Player.prototype.rollDice = function () {
 
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
-  this.diceBox.innerHTML = 0;
   this.turnScore = 0; //Fix bug, resets turnScore value at the end of each turn
+  this.diceBox.innerHTML = 0;
 }
 
-// Player.prototype.win = function () {
-//
-// }
-
+Player.prototype.restart = function () {
+  this.totalScore = 0;
+  this.turnScore = 0;
+  this.diceBox.innerHTML = 0;
+}
 
 
 
@@ -48,12 +49,11 @@ $(document).ready(function() {
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
   });
-
   $("#p1-hold").click(function(event) {
     newPlayer1.hold();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
-    if (newPlayer1.totalScore >= 10) {
+    if (newPlayer1.totalScore >= 100) {
       $("#win").slideToggle();
       $("#content").slideToggle();
     } else {
@@ -65,12 +65,11 @@ $(document).ready(function() {
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
-
   $("#p2-hold").click(function(event) {
     newPlayer2.hold();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
-    if (newPlayer2.totalScore >= 10) {
+    if (newPlayer2.totalScore >= 100) {
       $("#win").slideToggle();
       $("#content").slideToggle();
     } else {
@@ -78,9 +77,17 @@ $(document).ready(function() {
     }
   });
 
-  // $("#restart-btn").click(function(event) {
-  //
-  // });
+  $("#restart-btn").click(function(event) {
+    var restartQuestion = confirm("Are you sure you want to RESET the game?");
+    if (restartQuestion === true) {
+      newPlayer1.restart();
+      newPlayer2.restart();
+      $("#p1-score").text(0);
+      $("#p2-score").text(0);
+      $("#p1-turnscore").text(0);
+      $("#p2-turnscore").text(0);
+    }
+  });
 
   $("#reset-gamepage").click(function(event) {
     var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
