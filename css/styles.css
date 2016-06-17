@@ -19,7 +19,7 @@ body {
 }
 
 #content {
-  display: none;
+  /*display: none;*/
   color: #000000;
   background-color: #FFFFFF;
   margin-top: 100px;
@@ -42,6 +42,10 @@ body {
 
 #names-row {
   width: 135%;
+}
+
+#player1, #dice, #player2 {
+  width: 100%;
 }
 
 h1 {
