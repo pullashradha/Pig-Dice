@@ -27,6 +27,7 @@ If the player clicks "Hold" it becomes the next player's turn | ----- | -----
 * HTML
 * CSS
 * Bootstrap
+* Font Awesome
 * jQuery
 * JavaScript
 
