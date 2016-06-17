@@ -26,6 +26,14 @@ body {
   text-align: center;
 }
 
+#win {
+  display: none;
+  color: #000000;
+  background-color: #FFFFFF;
+  margin-top: 200px;
+  text-align: center;
+}
+
 .page-header {
   font-size: 65pt;
   margin-bottom: 75px;
@@ -75,7 +83,7 @@ h1 {
   margin-top: 125px;
 }
 
-#reset-btn {
+#reset-gamepage, #reset-winpage {
   width: 100%;
 }
 
@@ -94,7 +102,7 @@ p {
   font-size: 15pt;
 }
 
-#rules {
+.rules {
   margin-left: 75px;
   margin-right: 75px;
 }

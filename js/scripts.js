@@ -23,12 +23,15 @@ Player.prototype.hold = function () {
   this.turnScore = 0; //Fix bug, resets turnScore value at the end of each turn
 }
 
+// Player.prototype.win = function () {
+//
+// }
+
+
 
 
 //User Interface Logic
 $(document).ready(function() {
-  event.preventDefault();
-
   $("#startgame-btn").click(function(event) {
     var playerName1 = $("input#p1input-name").val();
     var playerName2 = $("input#p2input-name").val();
@@ -36,7 +39,7 @@ $(document).ready(function() {
     $("#p2-name").text(playerName2);
     $("#intro-content").hide();
     $("#content").show();
-  })
+  });
 
   var newPlayer1 = new Player ();
   var newPlayer2 = new Player ();
@@ -45,32 +48,47 @@ $(document).ready(function() {
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
   });
+
   $("#p1-hold").click(function(event) {
     newPlayer1.hold();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
-    alert("It's the next player's turn");
+    if (newPlayer1.totalScore >= 10) {
+      $("#win").slideToggle();
+      $("#content").slideToggle();
+    } else {
+      alert("It's the next player's turn");
+    }
   });
 
   $("#p2-roll").click(function(event) {
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
+
   $("#p2-hold").click(function(event) {
     newPlayer2.hold();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
-    alert("It's the next player's turn");
+    if (newPlayer2.totalScore >= 10) {
+      $("#win").slideToggle();
+      $("#content").slideToggle();
+    } else {
+      alert("It's the next player's turn");
+    }
   });
 
   // $("#restart-btn").click(function(event) {
   //
   // });
 
-  $("#reset-btn").click(function(event) {
+  $("#reset-gamepage").click(function(event) {
     var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
     if (resetQuestion === true) {
       location.reload();  //location refers to current page which is the intro-content
     }
+  });
+  $("#reset-winpage").click(function(event) {
+    location.reload();
   });
 });
