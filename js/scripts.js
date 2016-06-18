@@ -2,7 +2,7 @@
 function Player (playerName) {
   this.totalScore = 0;
   this.turnScore = 0;
-  this.diceBox = document.getElementById("dieBox");
+  this.diceBox = document.getElementById("die-box");
   this.playerName = playerName;
 }
 Player.prototype.pName = function () {
@@ -22,7 +22,7 @@ Player.prototype.rollDice = function () {
 }
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
-  this.turnScore = 0; //Fix bug, resets turnScore value at the end of each turn
+  this.turnScore = 0; //Resets turnScore value at the end of each turn
   this.diceBox.innerHTML = 0;
 }
 Player.prototype.restart = function () {
@@ -59,7 +59,9 @@ $(document).ready(function() {
       $("#win").fadeToggle();
       $("#content").fadeToggle();
     } else {
-      alert("It's the next player's turn");
+      $("#turn-message").text("It's " + newPlayerName.name1 + "'s turn!");
+      $("#p1-roll, #p1-hold").prop("disabled", true);
+      $("#p2-roll, #p2-hold").prop("disabled", false);
     }
   });
   $("#p2-roll").click(function(event) {
@@ -76,7 +78,9 @@ $(document).ready(function() {
       $("#win").fadeToggle();
       $("#content").fadeToggle();
     } else {
-      alert("It's the next player's turn");
+      $("#turn-message").text("It's " + newPlayerName.name2 + "'s turn!");
+      $("#p2-roll, #p2-hold").prop("disabled", true);
+      $("#p1-roll, #p1-hold").prop("disabled", false);
     }
   });
   $("#restart-btn").click(function(event) {
