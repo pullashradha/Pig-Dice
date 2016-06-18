@@ -35,17 +35,16 @@ Player.prototype.restart = function () {
 
 //User Interface Logic
 $(document).ready(function() {
-  $("#startgame-btn").click(function(event) {
-    var playerName1 = $("input#p1input-name").val();
-    var playerName2 = $("input#p2input-name").val();
-    $("#p1-name").text(playerName1);
-    $("#p2-name").text(playerName2);
-    $("#intro-content").hide();
-    $("#content").show();
-  });
   var newPlayer1 = new Player ();
   var newPlayer2 = new Player ();
   var newPlayerName = new Player ();
+  $("#startgame-btn").click(function(event) {
+    newPlayerName.pName();
+    $("#p1-name").text(newPlayerName.name1);
+    $("#p2-name").text(newPlayerName.name2);
+    $("#intro-content").hide();
+    $("#content").show();
+  });
   $("#p1-roll").click(function(event) {
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
