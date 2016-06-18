@@ -1,10 +1,14 @@
 // Business End Logic
-function Player () {
+function Player (playerName) {
   this.totalScore = 0;
   this.turnScore = 0;
   this.diceBox = document.getElementById("dieBox");
+  this.playerName = playerName;
 }
-
+Player.prototype.pName = function () {
+  this.name1 = $("input#p1input-name").val();
+  this.name2 = $("input#p2input-name").val();
+}
 Player.prototype.rollDice = function () {
   var diceOutput = Math.floor(Math.random() * 6) + 1;
   this.diceBox.innerHTML = diceOutput;
@@ -16,13 +20,11 @@ Player.prototype.rollDice = function () {
     this.turnScore += diceOutput;
   }
 }
-
 Player.prototype.hold = function () {
   this.totalScore += this.turnScore;
   this.turnScore = 0; //Fix bug, resets turnScore value at the end of each turn
   this.diceBox.innerHTML = 0;
 }
-
 Player.prototype.restart = function () {
   this.totalScore = 0;
   this.turnScore = 0;
@@ -41,44 +43,45 @@ $(document).ready(function() {
     $("#intro-content").hide();
     $("#content").show();
   });
-
   var newPlayer1 = new Player ();
   var newPlayer2 = new Player ();
-
+  var newPlayerName = new Player ();
   $("#p1-roll").click(function(event) {
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
   });
   $("#p1-hold").click(function(event) {
     newPlayer1.hold();
+    newPlayerName.pName();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
-    if (newPlayer1.totalScore >= 100) {
-      $("#win").slideToggle();
-      $("#content").slideToggle();
+    if (newPlayer1.totalScore >= 10) {
+      $("#winner-name").text(newPlayerName.name1 + " Wins!");
+      $("#win").fadeToggle();
+      $("#content").fadeToggle();
     } else {
       alert("It's the next player's turn");
     }
   });
-
   $("#p2-roll").click(function(event) {
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
   $("#p2-hold").click(function(event) {
     newPlayer2.hold();
+    newPlayerName.pName();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
-    if (newPlayer2.totalScore >= 100) {
-      $("#win").slideToggle();
-      $("#content").slideToggle();
+    if (newPlayer2.totalScore >= 10) {
+      $("#winner-name").text(newPlayerName.name2 + " Wins!");
+      $("#win").fadeToggle();
+      $("#content").fadeToggle();
     } else {
       alert("It's the next player's turn");
     }
   });
-
   $("#restart-btn").click(function(event) {
-    var restartQuestion = confirm("Are you sure you want to RESET the game?");
+    var restartQuestion = confirm("Are you sure you want to RESTART the game? This will make both the players' scores = 0.");
     if (restartQuestion === true) {
       newPlayer1.restart();
       newPlayer2.restart();
@@ -88,7 +91,6 @@ $(document).ready(function() {
       $("#p2-turnscore").text(0);
     }
   });
-
   $("#reset-gamepage").click(function(event) {
     var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
     if (resetQuestion === true) {

@@ -19,7 +19,7 @@ body {
 }
 
 #content {
-  /*display: none;*/
+  display: none;
   color: #000000;
   background-color: #FFFFFF;
   margin-top: 100px;
@@ -42,10 +42,6 @@ body {
 
 #names-row {
   width: 135%;
-}
-
-#player1, #dice, #player2 {
-  width: 100%;
 }
 
 h1 {
@@ -72,10 +68,15 @@ h1 {
   margin-top: 50px;
 }
 
-#p1-roll, #p1-hold, #p2-roll, #p2-hold, #restart-btn {
+#p1-roll, #p1-hold, #p2-roll, #p2-hold {
   margin-top: 35px;
   margin-left: 20px;
   font-size: 15pt;
+}
+
+#restart-btn {
+  font-size: 15pt;
+  margin-top: 35px;
 }
 
 .btn-primary {
