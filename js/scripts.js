@@ -54,7 +54,7 @@ $(document).ready(function() {
     newPlayerName.pName();
     $("#p1-score").text(newPlayer1.totalScore);
     $("#p1-turnscore").text(0);
-    if (newPlayer1.totalScore >= 100) {
+    if (newPlayer1.totalScore >= 10) {
       $("#winner-name").text(newPlayerName.name1 + " Wins!");
       $("#win").fadeToggle();
       $("#content").fadeToggle();
@@ -73,7 +73,7 @@ $(document).ready(function() {
     newPlayerName.pName();
     $("#p2-score").text(newPlayer2.totalScore);
     $("#p2-turnscore").text(0);
-    if (newPlayer2.totalScore >= 100) {
+    if (newPlayer2.totalScore >= 10) {
       $("#winner-name").text(newPlayerName.name2 + " Wins!");
       $("#win").fadeToggle();
       $("#content").fadeToggle();
