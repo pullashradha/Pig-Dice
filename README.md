@@ -33,7 +33,7 @@ If the player clicks "Hold" it becomes the next player's turn | ----- | -----
 
 ### Links
 
-Git Hub Webpage: http://pullashradha.github.io/pig-dice
+Git Hub Webpage: https://pullashradha.github.io/pig-dice
 
 ### License
 
