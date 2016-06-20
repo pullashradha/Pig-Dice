@@ -60,7 +60,7 @@ $(document).ready(function() {
       $("#win").fadeToggle();
       $("#content").fadeToggle();
     } else {
-      $("#turn-message").text("It's " + newPlayerName.name1 + "'s turn!");
+      $("#turn-message").text("It's " + newPlayerName.name2 + "'s turn!");
       $("#p1-roll, #p1-hold").prop("disabled", true);
       $("#p2-roll, #p2-hold").prop("disabled", false);
     }
@@ -79,7 +79,7 @@ $(document).ready(function() {
       $("#win").fadeToggle();
       $("#content").fadeToggle();
     } else {
-      $("#turn-message").text("It's " + newPlayerName.name2 + "'s turn!");
+      $("#turn-message").text("It's " + newPlayerName.name1 + "'s turn!");
       $("#p2-roll, #p2-hold").prop("disabled", true);
       $("#p1-roll, #p1-hold").prop("disabled", false);
     }
