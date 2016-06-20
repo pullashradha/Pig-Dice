@@ -38,18 +38,19 @@ $(document).ready(function() {
   var newPlayer1 = new Player ();
   var newPlayer2 = new Player ();
   var newPlayerName = new Player ();
-  $("#startgame-btn").click(function(event) {
+  $("form#names-row").submit(function(event) {
+    event.preventDefault();
     newPlayerName.pName();
     $("#p1-name").text(newPlayerName.name1);
     $("#p2-name").text(newPlayerName.name2);
     $("#intro-content").hide();
     $("#content").show();
   });
-  $("#p1-roll").click(function(event) {
+  $("#p1-roll").click(function() {
     newPlayer1.rollDice();
     $("#p1-turnscore").text(newPlayer1.turnScore);
   });
-  $("#p1-hold").click(function(event) {
+  $("#p1-hold").click(function() {
     newPlayer1.hold();
     newPlayerName.pName();
     $("#p1-score").text(newPlayer1.totalScore);
@@ -64,11 +65,11 @@ $(document).ready(function() {
       $("#p2-roll, #p2-hold").prop("disabled", false);
     }
   });
-  $("#p2-roll").click(function(event) {
+  $("#p2-roll").click(function() {
     newPlayer2.rollDice();
     $("#p2-turnscore").text(newPlayer2.turnScore);
   });
-  $("#p2-hold").click(function(event) {
+  $("#p2-hold").click(function() {
     newPlayer2.hold();
     newPlayerName.pName();
     $("#p2-score").text(newPlayer2.totalScore);
@@ -83,7 +84,7 @@ $(document).ready(function() {
       $("#p1-roll, #p1-hold").prop("disabled", false);
     }
   });
-  $("#restart-btn").click(function(event) {
+  $("#restart-btn").click(function() {
     var restartQuestion = confirm("Are you sure you want to RESTART the game? This will make both the players' scores = 0.");
     if (restartQuestion === true) {
       newPlayer1.restart();
@@ -94,13 +95,13 @@ $(document).ready(function() {
       $("#p2-turnscore").text(0);
     }
   });
-  $("#reset-gamepage").click(function(event) {
+  $("#reset-gamepage").click(function() {
     var resetQuestion = confirm("Are you sure you want to RESET the game? This will take you back to the rules page.")
     if (resetQuestion === true) {
       location.reload();  //location refers to current page which is the intro-content
     }
   });
-  $("#reset-winpage").click(function(event) {
+  $("#reset-winpage").click(function() {
     location.reload();
   });
 });

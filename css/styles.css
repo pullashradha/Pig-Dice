@@ -36,16 +36,13 @@ body {
   padding-bottom: 35px;
 }
 
-#names-row {
-  width: 135%;
-}
-
 h1 {
   font-size: 35pt;
   padding-bottom: 30px;
 }
 
-#p1input-name {
+#names-row {
+  margin-right: 35px;
   margin-left: 25px;
 }
 
