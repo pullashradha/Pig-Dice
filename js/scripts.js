@@ -14,6 +14,7 @@ Player.prototype.rollDice = function () {
   this.diceBox.innerHTML = diceOutput;
   if (diceOutput === 1) {
     alert("You lost this turn, switch players!");
+    $("#turn-message").text("It's the next player's turn!");
     this.turnScore = 0;
     this.diceBox.innerHTML = 0;
   } else {
@@ -30,7 +31,6 @@ Player.prototype.restart = function () {
   this.turnScore = 0;
   this.diceBox.innerHTML = 0;
 }
-
 
 
 //User Interface Logic
