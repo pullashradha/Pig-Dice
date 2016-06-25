@@ -24,7 +24,7 @@ If the player clicks "Hold" it becomes the next player's turn | ----- | -----
 
 ## Future Features
 
-HTML | CSS Styling | JavaScript
+HTML | CSS | JavaScript
 ----- | ----- | -----
 ----- | ----- | Fix bug
 ----- | ----- | Clean up repetitive code, and fully separate the Business & UI Logic
