@@ -21,7 +21,7 @@ This program can only be accessed on computer with Git and Atom installed.
 
 ## Specifications
 
-The program should ... | Example Input | Example Output
+The program should... | Example Input | Example Output
 ----- | ----- | -----
 If the dice rolls 1 the turn score becomes 0 | Dice: 5, Turn Score: 5 | Dice: 1, Turn Score: 0
 If the dice rolls 1 it becomes the next player's turn | Dice: 5, Turn Score: 5, Player1 | Dice: 1, Turn Score: 0, "It's the next player's turn!"
