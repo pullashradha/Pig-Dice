@@ -6,7 +6,14 @@
 
 ## Description
 
-This is a program that creates a web game for Pig Dice.
+This program creates a two player web game for Pig Dice. For more information about pig dice, visit https://en.wikipedia.org/wiki/Pig_(dice_game)
+
+## Setup/Installation Requirements
+
+This program can only be accessed on computer with Git and Atom installed.
+
+* Clone this repository
+* Open index.html in Terminal
 
 ## Known Bugs
 
@@ -14,22 +21,21 @@ This is a program that creates a web game for Pig Dice.
 
 ## Specifications
 
-The program should handle: | Example Input | Example Output
+The program should ... | Example Input | Example Output
 ----- | ----- | -----
-If the dice rolls 1 the turn score becomes 0 | Dice: 5 Turn Score: 5 | Dice: 1 Turn Score: 0
-If the dice rolls 1 it becomes the next player's turn | ----- | -----
-If the dice rolls any other number the player can keep rolling | ----- | -----
+If the dice rolls 1 the turn score becomes 0 | Dice: 5, Turn Score: 5 | Dice: 1, Turn Score: 0
+If the dice rolls 1 it becomes the next player's turn | Dice: 5, Turn Score: 5, Player1 | Dice: 1, Turn Score: 0, "It's the next player's turn!"
 If the player clicks "Hold" the turn score is transferred to the total score, and the turn score turns to 0 | Turn Score: 10 Total Score: 0  | Turn Score: 0 Total Score: 0
-If the player clicks "Hold" it becomes the next player's turn | ----- | -----
+If the player clicks "Hold" it becomes the next player's turn | Dice: 5, Turn Score: 5, Player1 | "It's Player2's turn"
 
 ## Future Features
 
 HTML | CSS | JavaScript
 ----- | ----- | -----
------ | ----- | Fix bug
------ | ----- | Clean up repetitive code, and fully separate the Business & UI Logic
------ | ----- | Make the current player's "Roll" and "Hold" buttons disable when they roll a 1
------ | ----- | Create an option on the landing page form for the player to play against an AI instead of another player
+--- | --- | Fix bug
+--- | --- | Clean up repetitive code, and fully separate the Business & UI Logic
+--- | --- | Make the current player's "Roll" and "Hold" buttons disable when they roll a 1
+--- | --- | Create an option on the landing page form for the player to play against an AI instead of another player
 
 ## Technologies Used
 
@@ -42,7 +48,7 @@ HTML | CSS | JavaScript
 
 ### Links
 
-Git Hub Webpage: https://pullashradha.github.io/Pig-Dice
+Git Hub Webpage: https://pullashradha.github.io/PigDice
 
 ### License
 
